@@ -1,0 +1,80 @@
+class player{
+    String nama;
+    int HP;
+    int speed;
+    int jarak;
+
+  
+    void lari(){
+        System.out.println(" \n===========" + this.nama + " START TO RUN ============ " );
+    }
+
+   void akanCapek(){
+            if (this.healthPoin == 1){
+                System.out.println ("Status Nyawa " + this.nama+ " = " + this.healthPoin + " Mulai kelelahan " );
+            }else if (this.healthPoin ==0){
+               System.out.println(this.nama + " tidak memiliki stamina lagi dan berhenti berlari " );
+               System.out.println(this.nama + " jarak yang ditempuh " + this.jarak + "  Kilo meter") ;
+            } else {
+                System.out.println (this.nama + " Terus berlari");
+            }
+
+    }
+    void tampilkan(){
+        System.out.println( "\n###### INFORMASI PEMAIN ##### " 
+                            +"\nNama pemain : " + this.nama 
+                            + "\nNyawa : " + this.healthPoin 
+                            + "\nKecepatan : " + this.speed + " Km per HP");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        //objek player
+        player Jody = new player ();
+        Jody.nama= "Josy Scamer";
+        Jody.healthPoin = 10;
+        Jody.speed =3;
+        Jody.jarak=0;
+        Jody.tampilkan();
+        Jody.lari();
+        do {
+            Jody.healthPoin--;
+            Jody.jarak+=Jody.speed;
+            Jody.akanCapek();
+        }while (Jody.healthPoin>0);
+
+        player Diki = new player ();
+        Diki.nama= "Diki Tamvan";
+        Diki.healthPoin = 3;
+        Diki.speed =5;
+        Diki.jarak=0;
+        System.out.println("\n# # # # # " + Jody.nama + " digantikan dengan pemain " + Diki.nama + " # # # # #");
+        Diki.tampilkan();
+        Diki.lari();
+        do {
+            Diki.healthPoin--;
+            Diki.jarak+=Jojo.speed;
+            Diki.akanCapek();
+        }while (Diki.healthPoin>0);
+
+        player Rizky= new player ();
+        Rizky.nama= "Rizky Kipot";
+        Rizky.healthPoin = 5;
+        Rizky.speed =5;
+        Rizky.jarak=0;
+        System.out.println("\n===== " + Diki.nama + " digantikan dengan pemain " + Rizky.nama + " =====");
+        Rizky.tampilkan();
+        Rizky.lari();
+        do {
+            Rizky.healthPoin--;
+            Rizky.jarak+=Rizky.speed;
+            Rizky.akanCapek();
+        }while (Rizky.healthPoin>0);
+
+        int Totaljaraktempuh=Jody.jarak + Diki.jarak +Rizky.jarak ;
+
+        System.out.println("\nTotal jarak yang dapat ditempuh semua pelari adalah " + totaljaraktempuh + " Km \n=====PERMAINAN BERAKHIR=====" );
+    }
+}
